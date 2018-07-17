@@ -79,7 +79,7 @@ def all_supplies_in_holidays(holiday_hash)
     #iterate over the holiday value to separate the holiday names and their arrays of supplies
     holiday.each do |holiday_name, supplies|
       #make into a string first, then split into two words if there is a space, then caps
-      holiday_name.to_s.split("_").to_s
+      holiday_name.to_s
       supplies.to_s
       puts "  #{holiday_name.capitalize}: " + "#{supplies.join(", ")}"
     end
