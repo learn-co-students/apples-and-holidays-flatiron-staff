@@ -74,14 +74,12 @@ def all_supplies_in_holidays(holiday_hash)
   #first, iterate over hash to get seasons and holidays with their data
   holiday_hash.each do |season, holiday|
     #make the seasons into strings and then capitalize, add a colon
-    season = season.to_s.capitalize
-    puts "#{season}:"
+    puts "#{season.to_s.capitalize}:"
     #iterate over the holiday value to separate the holiday names and their arrays of supplies
     holiday.each do |holiday_name, supplies|
       #make into a string first, then split into two words if there is a space, then caps
-      holiday_name.to_s.split("_")
-      supplies.to_s
-      puts "  #{holiday_name.capitalize}: " + "#{supplies.join(", ")}"
+
+      puts "  #{holiday_name.to_s.split("_").map {|w| w.capitalize}.join(" ")}: #{supplies.join(", ")}"
     end
   end
 end
